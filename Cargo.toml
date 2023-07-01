@@ -17,9 +17,6 @@ resolver = "2"
 name = "libs_compare"
 harness = false
 
-[dependencies]
-cipher = "0.4.2"
-
 [dev-dependencies]
 criterion = "0.5"
 env_logger = "0.10"

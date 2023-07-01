@@ -1,4 +1,7 @@
-use cipher::{generic_array::GenericArray, BlockDecrypt, BlockEncrypt, KeyInit};
+use blowfish::{
+    cipher::{generic_array::GenericArray, BlockDecrypt, BlockEncrypt, KeyInit},
+    BlowfishLE,
+};
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use rand::{random, thread_rng, RngCore};
 
@@ -12,7 +15,7 @@ pub fn libs_compare(c: &mut Criterion) {
         let id: u64 = random();
         let mut key = [0u8; 56];
         thread_rng().fill_bytes(&mut key);
-        let bf = blowfish::BlowfishLE::new_from_slice(key.as_ref()).unwrap();
+        let bf = BlowfishLE::new_from_slice(key.as_ref()).unwrap();
 
         b.iter(|| {
             let mut generic_arr = GenericArray::from(id.to_le_bytes());
