@@ -1,0 +1,27 @@
+[package]
+name = "blowfish_rs"
+version = "0.1.0"
+authors = ["Rail Khusnutdinov <rail@33.run>"]
+description = ""
+keywords = []
+categories = []
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/libfunc/blowfish/"
+documentation = "https://docs.rs/blowfish/"
+repository = "https://github.com/libfunc/blowfish/"
+readme = "./README.md"
+edition = "2021"
+resolver = "2"
+
+[[bench]]
+name = "libs_compare"
+harness = false
+
+[dependencies]
+cipher = "0.4.2"
+
+[dev-dependencies]
+criterion = "0.5"
+env_logger = "0.10"
+blowfish = "0.9"
+rand = "0.8"
