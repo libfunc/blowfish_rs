@@ -2,9 +2,9 @@
 name = "blowfish_rs"
 version = "0.1.0"
 authors = ["Rail Khusnutdinov <rail@33.run>"]
-description = ""
-keywords = []
-categories = []
+description = "Blowfish block cipher without deps"
+keywords = ["blowfish", "crypto", "block-cipher"]
+categories = ["cryptography"]
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/libfunc/blowfish/"
 documentation = "https://docs.rs/blowfish/"
