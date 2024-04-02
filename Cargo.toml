@@ -1,14 +1,14 @@
 [package]
 name = "blowfish_rs"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Rail Khusnutdinov <rail@33.run>"]
 description = "Blowfish block cipher without deps"
 keywords = ["blowfish", "crypto", "block-cipher"]
 categories = ["cryptography"]
 license = "MIT OR Apache-2.0"
-homepage = "https://github.com/libfunc/blowfish/"
-documentation = "https://docs.rs/blowfish/"
-repository = "https://github.com/libfunc/blowfish/"
+homepage = "https://github.com/libfunc/blowfish_rs/"
+repository = "https://github.com/libfunc/blowfish_rs/"
+documentation = "https://docs.rs/blowfish_rs/"
 readme = "./README.md"
 edition = "2021"
 resolver = "2"

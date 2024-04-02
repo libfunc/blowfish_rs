@@ -72,16 +72,22 @@ impl Blowfish {
         blowfish
     }
 
-    pub const fn new_from_slice(key: &[u8]) -> Result<Self, InvalidLength> {
+    pub const fn new_from_slice(key: &[u8]) -> Self {
+        assert!(key.len() >= 4);
+        assert!(key.len() <= KEY_SIZE);
+        Blowfish::expand_key(key)
+    }
+
+    pub const fn new(key: &[u8; KEY_SIZE]) -> Self {
+        Blowfish::expand_key(key)
+    }
+
+    pub const fn try_new(key: &[u8]) -> Result<Self, InvalidLength> {
         if key.len() < 4 || key.len() > KEY_SIZE {
             return Err(InvalidLength);
         }
         let blowfish = Blowfish::expand_key(key);
         Ok(blowfish)
-    }
-
-    pub const fn new(key: &[u8; KEY_SIZE]) -> Self {
-        Blowfish::expand_key(key)
     }
 
     const fn round_function(&self, x: u32) -> u32 {
